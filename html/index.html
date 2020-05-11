@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>E-BookStore</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+        <link rel="stylesheet" href="../css/index.css">  
+    </head>
+        <body>
+
+    	<nav class=" navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+                <a class="navbar-brand" href="index.html" style="font-size:36px; "><span>E-BookStore</span><strong style="font-style: italic; font-family: serif; color: #007bff; font-size: 1.75rem">Početna stranica</strong></a> 
+	  </nav>
+
+    
+    <div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h3>#Izvršite pretragu knjiga</h3>
+			</div>
+			<div class="card-body">
+				<form name="form">
+          <p class="text-white">Ova aplikacija je edukativnog karaktera i služi radi prikaza mogućnosti Solr-a.
+          </p>
+					<div class="input-group form-group">
+            <div class="input-group-prepend">
+						<span class="input-group-text"><i class="fas fa-search"></i></span>
+						</div>
+						<input id="queryString" type="text" class="form-control" aria-labelledby="search" placeholder="Unesite upitni string..." name="search" autocomplete="on">
+                                               
+				        </div>
+                   <div class="form-group">
+                      <label class="text-white mt-0 mb-0" for="searchByParams">Parametar pretrage</label>
+                        <select class="form-control" id="searchByValue" >
+                        <option value="link">Naslov</option>
+                        <option value="body">Sadžaj</option>
+                        <option value="last_modified">Datum Modifikacije</option>
+                        <option value="size">Veličina dokumenta</option>
+                        </select>
+                    </div>
+                    <div class="form-group" >
+						          <input  type="button" id="searchDocuments" value="Pretraži" class="btn float-right btn-primary">
+					           </div>
+                      <br>
+                      <br>
+                      <br>
+                        <p class="text-white">U slučaju da želite da indeksirate neki fajl kliknite na link ispod:</p>
+                        <label for="file-input" class="input-label mb-0  text-center">
+                            #Indeksiraj fajl
+                        <input type="file" id="file-input">
+                        </label>
+				</form>
+			</div>
+                    <div class="card-footer">
+		    <div class="d-flex justify-content-center links">
+		        <a class="text-white" href="https://www.elfak.ni.ac.rs/">@2020 Elfak</a>
+                    </div>
+	</div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="myModal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" style="color:#007bff">Obaveštenje</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p id="messageContent">Uspešno ste izvršili indeksiranje fajla!</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn login_btn" data-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="loadModal" class="modal fade bd-example-modal-lg" data-backdrop="static" data-keyboard="false" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content" style="width: 60px">
+            <span class="fa fa-spinner fa-spin fa-3x" style="color:#007bff;"></span>
+        </div>
+    </div>
+</div>
+
+</body>
+  <script src="../js/index.js" ></script>
+  <script src="../js/FileSaver.js" ></script>
+    
+</html>
