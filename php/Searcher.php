@@ -34,7 +34,7 @@ class Searcher {
                                
             'body' => [
                 'from' => 0,    
-                'size' => 50,
+                'size' => 100,
                 'query' => [
                     'match' => [
                         $field => $query  
@@ -59,9 +59,10 @@ class Searcher {
             $title = $file[_source][link];
             $content = $file[_source][body];
             $dateModified=$file[_source][last_modified];
+			$dateUploaded=$file[_source][date_uploaded];
             $rank = $file[_score];
             $size=$file[_source][size];
-            $book = new Book($id,$title,$dateModified,$rank,$size);
+            $book = new Book($id,$title,$dateModified,$dateUploaded,$rank,$size);
             array_push($books, $book);
             
         }
@@ -76,9 +77,10 @@ class Searcher {
             $title = $file[_source][link];
             $content = $file[_source][body];
             $dateModified=$file[_source][last_modified];
+			$dateUploaded=$file[_source][date_uploaded];
             $rank = $file[_score];
             $size=$file[_source][size];
-            $book = new Book($id,$title,$dateModified,$rank,$size);
+            $book = new Book($id,$title,$dateModified,$dateUploaded,$rank,$size);
             $book->content=$content;  
         }
         return $book;
@@ -94,7 +96,7 @@ class Searcher {
                                
             'body' => [
                 'from' => 0,    
-                'size' => 50,
+                'size' => 100,
                 'query' => [
                     'match' => [
                         $field => $query  

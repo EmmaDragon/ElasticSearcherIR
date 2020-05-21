@@ -6,16 +6,18 @@ class Book{
    public $title;
    public $content = "";
    public $dateModified;
+   public $dateUploaded;
    public $rank;
    public $size;
    
-    public function __construct($idetifier,$title,$dateModified,$score,$size) {
+    public function __construct($idetifier,$title,$dateModified,$dateUploaded,$score,$size) {
      
        $this->id=$idetifier;
        $this->title=$title;
        $this->dateModified=$dateModified;
        $this->rank=$score;
        $this->size=$size;
+	   $this->dateUploaded=$dateUploaded;
    }
    
    public function printInfoBook()

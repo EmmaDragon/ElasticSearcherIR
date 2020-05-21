@@ -9,11 +9,12 @@ $(document).ready(function() {
       {
            "#": (i+1).toString(),
            "Id": book.id,
-           "Title" : book.title,
-           "Date Modified" :book.dateModified,
+           "Naziv" : book.title,
+           "Datum Modifikacije" :book.dateModified,
+		   "Datum Upload-a" :book.dateUploaded,
            "Rank":book.rank, 
-           "Size": book.size,
-           "Download File" : "<button class='btn btn-primary' name='download' id="+book.id+">Download</button>"
+           "Veličina": book.size,
+           "Preuzmi Fajl" : "<button class='btn btn-primary' name='download' id="+book.id+">Download</button>"
            
       };
       data.push(obj);
@@ -32,11 +33,12 @@ $(document).ready(function() {
         "columns":[
             {"data":"#"},
             {"data":"Id"},
-            {"data":"Title"},
-            {"data":"Date Modified"},
+            {"data":"Naziv"},
+            {"data":"Datum Modifikacije"},
+			{"data":"Datum Upload-a"},
             {"data":"Rank"},
-            {"data":"Size"},
-            {"data":"Download File"}
+            {"data":"Veličina"},
+            {"data":"Preuzmi Fajl"}
  
         ],
         "data": data
